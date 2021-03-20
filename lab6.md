@@ -13,18 +13,15 @@
 
 ##**วิธีการทำการทดลอง (ทำเป็นขั้นตอนพร้อมภาพประกอบ)**
 1. ต่อ USB เข้า อแดปเตอร์ และค่อยนำไมโครคอนโทรเลอร์มาเสียบต่อ [![Image](https://imgbb.com/)](https://ibb.co/qWCHFqG)
-2. พิมพ์ platformio.ini src และพิมพ์ vi src/main.cpp ซึ่งเป็นโปรแกรม 05_Wifi-Web-Server out put portไว้ทดสอบไมโครคอนโทรเลอร์ โดยที่ต้องต่อกะบwifiก่อน ชื่อ ssid = HI_BHFWIDI_2.4G กับ password ลงไป ซึ่งเขียนด้วยภาษา C/C++ มี 2 ส่วน ส่วนแรก คือส่วน setup() ซึ่งจะ run ครั้งเดียว (บรรทัดที่ 15-22) จะทำการ set Wifi ที่เลือกไว้ หลังจากนั้นก็จะset up wev server ถ้ามีการเชื่อมโยงก็จะแสดงผลง่ายๆ โดยนำ cnt++ มาบวก1ไปเรื่อยๆ และส่วนที่สอง คือส่วน loop() ก็จะ run วนloop ตลอดไป ตามรูปภาพ [![Image](https://imgbb.com/)](https://ibb.co/S0GKMrn) [![Image](https://imgbb.com/)](https://ibb.co/1RfxWrt) [![Image](https://imgbb.com/)](https://ibb.co/BfnRvQt)
-3. พิมพ์ pio sun -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ ในขณะที่ runแก ก็กดปุ่มดำเพื่อบอกให้มัน load โหลดช้าเร็วขึ้นกับความเร็วของมัน และกดปุ่มแดงให้มัน reset (https://imgbb.com/)](https://ibb.co/4mXKxfc) [![Image](https://imgbb.com/)](https://ibb.co/CMZhdZB)
-4. เมื่อโหลดเสร็จแล้ว แล้วเข้าไปเซ็คที่ web browser กดปุ่ม reset และ  พิมพ์ pio device monitor เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor ไมโครคอนโทรเลอร์จะแสดงการค้นหา wifi แล้วเขื่อมต่อwifi จากนั้นจะบอก IPAddress เราทำการ copy แล้วใช้ browser จะแสดงผล่า hello 1 hello 2 hello 3 ไปเรื่อยๆ แสดงว่าสามารถใช้ไมโครคอนโทรเลอร์ตัวนี้เข้า web server ได้ทั่วไป 
-5. ทำการแก้โปรแกรมเล็กน้อยเพื่อให้ตัวอักษรใหญ่ขึ้น ตรง hellocnt ให้ใส่ h1 และบอก html ด้วย
-6. แก้โปรแกรมเสร็จแล้วจะ upload ใหม่ โดยพิมพ์ pio sun -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ ในขณะที่ runโปรแกรม ก็กดปุ่มดำเพื่อบอกให้มัน load โหลดช้าเร็วขึ้นกับความเร็วของมัน และกดปุ่มแดงให้มัน reset (https://imgbb.com/)](https://ibb.co/4mXKxfc) [![Image](https://imgbb.com/)](https://ibb.co/CMZhdZB)
-7. พิมพ์ pio device monitor เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor ซึ่งจะเห็นว่าไมโครคอนโทรเลอร์จะ run โปรแกรมเหมือนเดิม IPAddress เดิม หมด เพียงแค่ตัวอักษรใหญ่ขึ้น [![Image](https://imgbb.com/)](https://ibb.co/6XxZFPn)
+2. พิมพ์ platformio.ini src และพิมพ์ vi src/main.cpp ซึ่งเป็นโปรแกรม 06 ไว้ทดสอบไมโครคอนโทรเลอร์ โดยที่ต้องสร้าง wifi AP ขึ้นเอง ซึ่งเขียนด้วยภาษา C/C++ โดยที่เราต้องกำหนดชื่อ wifi ของเรา ในที่นี้ชื่อ ssid = TUENG-ESP-WIFI และกำหนด password = choompol และถ้าจะปล่อย wifi ให้ใช้ ต้องกำหนด IPAddress ทั้ง local_ip , gateway subnet  มี 2 ส่วน ส่วนแรก คือส่วน setup() ซึ่งจะ run ครั้งเดียว (บรรทัดที่ 15-35) จะทำการ set server ไว้ 1ตัว และrunคำสั่ง APโดยกำหนด ssid และ password ลงไป และrunบอกว่า IPAddess ที่ตั้งไว้เป็นเท่าไหร่ และส่วนที่สอง คือส่วน loop() ซึ่งจะวนloopเรื่อยๆ ตลอดไป ตามรูปภาพ [![Image](https://imgbb.com/)](https://ibb.co/BZQvrVx)  [![Image](https://imgbb.com/)](https://ibb.co/B4VDKSt)  [![Image](https://imgbb.com/)](https://ibb.co/j5VmtVK) 
+4. พิมพ์ pio sun -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ ในขณะที่ run ก็กดปุ่มดำเพื่อบอกให้มัน load โหลดช้าเร็วขึ้นกับความเร็วของมัน และกดปุ่มแดงให้มัน reset (https://imgbb.com/)](https://ibb.co/wsvkfHs)
+5. เมื่อโหลดเสร็จแล้ว เราจะต้องใช้โทรศัพท์มือถือ หรือคอมพิวเตอร์ในการเช็คผลลัพธ์ ในที่นี้ใช้โทรศัพท์มือถือ โดยที่ต้องพิมพ์ pio device monitor และ ver started ก่อน เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor ไมโครคอนโทรเลอร์จะแสดงการค้นหา wifi บนโทรศัพท์มือถือ แล้วทำการเขื่อมต่อwifi โดยใส่ รหัสผ่านที่เราได้ตั้งเอาไว้[![Image](https://imgbb.com/)](https://ibb.co/nBPPQwY) [![Image](https://imgbb.com/)](https://ibb.co/FzDRQK8)
 
 ##**การบันทึกผลการทดลอง (พร้อมตัวอย่าง)**
-####### ผลลัพธ์ที่แสดงบนหน้าจอ monitor ไมโครคอนโทรเลอร์จะแสดงการค้นหา wifi แล้วเขื่อมต่อwifi จากนั้นจะบอก IPAddress เราทำการ copy แล้วใช้ browser จะแสดงผล่า hello 1 hello 2 hello 3 ไปเรื่อยๆ แสดงว่าสามารถใช้ไมโครคอนโทรเลอร์ตัวนี้เข้า web server ได้ทั่วไป 
+####### ต้องใช้โทรศัพท์มือถือ หรือคอมพิวเตอร์ในการเช็คผลลัพธ์ ในที่นี้ใช้โทรศัพท์มือถือ โดยที่ต้องพิมพ์ pio device monitor และ ver started ก่อน เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor ไมโครคอนโทรเลอร์จะแสดงการค้นหา wifi บนโทรศัพท์มือถือ แล้วทำการเขื่อมต่อwifi โดยใส่ รหัสผ่านที่เราได้ตั้งเอาไว้[![Image](https://imgbb.com/)](https://ibb.co/nBPPQwY) [![Image](https://imgbb.com/)](https://ibb.co/FzDRQK8)
 
 ##**อภิปรายผลการทดลอง (พร้อมตัวอย่าง)**
-####### ในการทดสอบไมโครคอนโทรเลอร์ตัวนี้ เราต้องใช้ web browser ธรรมดา ที่สามารถเข้าไปดูเว็ปไซต์ทั่วไปได้  
+####### ในการทดสอบไมโครคอนโทรเลอร์ตัวนี้ เราไม่ต้องใช้ wifi AP ของที่อื่น เราสามารถสร้างโปรแกรมขึ้นมาเองได้
 
 ##**คำถามหลังการทดลอง (พร้อมตัวอย่างคำตอบ)**
 #######
