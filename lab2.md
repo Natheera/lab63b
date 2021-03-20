@@ -14,8 +14,8 @@
 ##**วิธีการทำการทดลอง (ทำเป็นขั้นตอนพร้อมภาพประกอบ)**
 1. ต่อ USB เข้า ไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/vJt7Sjc) ถ้าเสียบช่องผิด ตอนกดปุ่มเพื่อ upload จะ fail
 2. พิมพ์ platformio.ini src และพิมพ์ vi src/main.cpp ซึ่งเป็นโปรแกรมไว้ทดสอบไมโครคอนโทรเลอร์ ซึ่งเขียนด้วยภาษา C/C++ มี 2 ส่วน ส่วนแรก คือส่วน setup() ซึ่งจะ run ครั้งเดียว ซึ่งจะ set wifi ให้พร้อมทำงาน ออกที่ความเร็ว 115200   [![Image](https://imgbb.com/)](https://ibb.co/WGBhpyx) และส่วนที่สอง คือส่วน loop() ก็จะ run วนloop ตลอดไป ซึ่งจะึ้นว่ากำลังค้นหาwifi พอได้wifi ก็จะแสดงว่ามีอะไรบ้าง  [![Image](https://imgbb.com/)](https://ibb.co/vX3XrCD)
-3. พิมพ์ pio sun -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/N1ftbxH)
-4. ในขณะที่ run ก็กดปุ่มดำเพื่อบอกให้มัน load แล้วกดปุ่มสีแดงเพื่อ reset io01 โหลดช้าเร็วขึ้นกับความเร็วของมัน [![Image](https://imgbb.com/)](https://ibb.co/Q9pJZnN)
+3. พิมพ์ pio run -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/N1ftbxH)
+4. ในขณะที่ run ก็กดปุ่มดำเพื่อบอกให้มัน load แล้วกดปุ่มสีแดงเพื่อ reset โหลดช้าเร็วขึ้นกับความเร็วของมัน [![Image](https://imgbb.com/)](https://ibb.co/Q9pJZnN)
 5. เมื่อโหลดเสร็จแล้ว พิมพ์ pio device monitor เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor เพื่อดูว่าไมโครคอนโทรเลอร์แสกนหาwifi ตัวไหนเจอบ้าง [![Image](https://imgbb.com/)](https://ibb.co/XtYy9Sq) 
 6. ถ้ากดปุ่มแดง เพื่อ reset ตัวไมโครคอนโทรเลอร์ ก็จะทำงานใหม่  [![Image](https://imgbb.com/)](https://ibb.co/YdM4Y5j) 
 
