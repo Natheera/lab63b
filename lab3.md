@@ -15,7 +15,7 @@
 ##**วิธีการทำการทดลอง (ทำเป็นขั้นตอนพร้อมภาพประกอบ)**
 1. ต่อ USB เข้า อแดปเตอร์ และค่อยนำไมโครคอนโทรเลอร์มาเสียต่อ อแดปเตอร์ที่มีสายสีขาว(out put port 0) เพื่อให้เห็นชัดเจนจึงต่อเข้าLED และสายเหลือง(input port 1)เพื่อให้เห็นชัดเจนจึงต่อเข้าLED อีกที [![Image](https://imgbb.com/)](https://ibb.co/v3hwY5V) ถ้าเสียบช่องผิด ตอนกดปุ่มเพื่อ upload จะ fail [![Image](https://imgbb.com/)](https://ibb.co/Y4SyWrv)
 2. พิมพ์ platformio.ini src และพิมพ์ vi src/main.cpp ซึ่งเป็นโปรแกรม 03 out put portไว้ทดสอบไมโครคอนโทรเลอร์ ซึ่งเขียนด้วยภาษา C/C++ มี 2 ส่วน ส่วนแรก คือส่วน setup() ซึ่งจะ run ครั้งเดียว ซึ่งจะ set เลข 0 ให้เป็น port out put ออกที่ความเร็ว 115200  และส่วนที่สอง คือส่วน loop() ก็จะ run วนloop ตลอดไป ซึ่งจะ run ทุกๆ 500 ms (ครึ่งวินาที) แล้วนับ cnt++ไปเรื่อยๆ ถ้า cnt = เลขคู่ จะ ON และส่งค่า 1 ไปที่ port 0 แต่ถ้า cnt = เลขคี่ ให้ทำตรงข้าม [![Image](https://imgbb.com/)](https://ibb.co/dLCfHHd)
-3. พิมพ์ pio sun -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/N1ftbxH)
+3. พิมพ์ pio run -t upload เพื่อที่จะ upload โปรแกรมลงไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/N1ftbxH)
 4. ในขณะที่ run ก็กดปุ่มดำเพื่อบอกให้มัน load แล้วกดปุ่มสีแดงเพื่อ reset io01 โหลดช้าเร็วขึ้นกับความเร็วของมัน [![Image](https://imgbb.com/)](https://ibb.co/7XZQYZ4)
 5. เมื่อโหลดเสร็จแล้ว พิมพ์ pio device monitor เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor จะเห็นว่าทุกๆครึ่งวินาทีจะเป็น ON เป็น OFF [![Image](https://imgbb.com/)](https://ibb.co/6XxZFPn)
 6. ถ้าไปดูที่ LED ที่ต่อ port 0 ที่เส้นสีขาวไว้ ก็จะเปล่งแสงสีเขียวออกมาตอนที่เป็น ON ส่วน LED สีน้ำเงินไม่ถูกต่อเพราะต่ออยู่กับ port 2 ไฟจึงติดตลอด [![Image](https://imgbb.com/)](https://ibb.co/zFS9sFt) [![Image](https://imgbb.com/)](https://ibb.co/qkn7FdL) 
