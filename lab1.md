@@ -15,7 +15,7 @@
 1. ต่อ USB เข้า ไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/qL8J432)
 2. เข้าไปที่โปรแกรมตัวอย่างชื่อ  "01_Serial-Monitor" และพิมพ์ ci src/main.cpp ซึ่งเป็นโปรแกรมไว้ทดสอบไมโครคอนโทรเลอร์ ซึ่งมีอยู่ 15 บรรทัด เขียนด้วยภาษา C/C++ มี 2 ส่วน ส่วนแรก คือส่วน setup() ซึ่งจะ run ครั้งเดียว ซึ่งจะ run serial ออกที่ความเร็ว 115200 และส่วนที่สอง คือส่วน loop() ก็จะ run วนloop ตลอดไป ซึ่งจะเพิ่มตัวแปร cnt++ และแสดงตัวแปร cnt ออกมา โดยหน่วงเวลา 1000 ms (หรือ 1s) [![Image](https://imgbb.com/)](https://ibb.co/gz4mgR0)
 3. ในข้อที่ 2 นั้นจะ run โดยใช้ confituration file ของ platformi.ini ซึ่งจะบอกว่าเป็น platform ของบริษัทอะไร board ชื่ออะไร ใช้วิธีเขียนโปรแกรมแบบไหน portที่ใช้ติดต่อกับคอมใช้อันไหน [![Image](https://imgbb.com/)](https://ibb.co/w67qJD8)
-4. พิมพ์ pio sun -t upload เพื่อที่จะ upload โปรแกรม 01_Serial-Monitor ลงไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/FWW0wXj)
+4. พิมพ์ pio run -t upload เพื่อที่จะ upload โปรแกรม 01_Serial-Monitor ลงไมโครคอนโทรเลอร์ [![Image](https://imgbb.com/)](https://ibb.co/FWW0wXj)
 5. ในขณะที่ run ก็กดปุ่มดำเพื่อบอกให้มัน load แล้วกดปุ่มสีแดงเพื่อ reset io01 โหลดช้าเร็วขึ้นกับความเร็วของมัน [![Image](https://imgbb.com/)](https://ibb.co/Q9pJZnN)
 6. เมื่อโหลดเสร็จแล้ว พิมพ์ pio device monitor เพื่อดูผลลัพธ์ที่แสดงบนหน้าจอ monitor จะเห็นได้ว่า cnt++ ที่เริ่มตั้งแต่ 0 จะเพิ่มทีละ 1 เรื่อยๆ และแสดงผลทุกๆ 1 วินาที  [![Image](https://imgbb.com/)](https://ibb.co/SsLW7wv) 
 7. ถ้ากดปุ่มแดง เพื่อ reset ตัวไมโครคอนโทรเลอร์ ก็จะเริ่มนับ 1 ใหม่  [![Image](https://imgbb.com/)](https://ibb.co/3TmsJB2) 
