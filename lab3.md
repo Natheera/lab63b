@@ -22,11 +22,15 @@
 7. ถ้ากดปุ่มแดง เพื่อ reset ตัวไมโครคอนโทรเลอร์ ก็จะทำงานใหม่   [![Image](https://imgbb.com/)](https://ibb.co/ZVw02jJ) [![Image](https://imgbb.com/)](https://ibb.co/GkWh6YH) 
 
 ##**การบันทึกผลการทดลอง (พร้อมตัวอย่าง)**
+
 ####### ดูผลลัพธ์ที่แสดงบนหน้าจอ monitor จะเห็นว่าทุกๆครึ่งวินาทีจะเป็น ON เป็น OFF [![Image](https://imgbb.com/)](https://ibb.co/6XxZFPn) ถ้าไปดูที่ LED ที่ต่อ port 0 ที่เส้นสีขาวไว้ ก็จะเปล่งแสงสีเขียวออกมาตอนที่เป็น ON ส่วน LED สีน้ำเงินไม่ถูกต่อเพราะต่ออยู่กับ port 2 ไฟจึงติดตลอด [![Image](https://imgbb.com/)](https://ibb.co/zFS9sFt) [![Image](https://imgbb.com/)](https://ibb.co/qkn7FdL) ถ้ากดปุ่มแดง เพื่อ reset ตัวไมโครคอนโทรเลอร์ ก็จะทำงานใหม่   [![Image](https://imgbb.com/)](https://ibb.co/ZVw02jJ) [![Image](https://imgbb.com/)](https://ibb.co/GkWh6YH) 
 
 ##**อภิปรายผลการทดลอง (พร้อมตัวอย่าง)**
+
 ####### ส่วน loop() จะ run วนloop ตลอดไป ซึ่งจะ run ทุกๆ 500 ms (ครึ่งวินาที) แล้วนับ cnt++ไปเรื่อยๆ ถ้า cnt = เลขคู่ จะ ON และส่งค่า 1 ไปที่ port 0 แต่ถ้า cnt = เลขคี่ ให้ทำตรงข้าม [![Image](https://imgbb.com/)](https://ibb.co/dLCfHHd)
 
 ##**คำถามหลังการทดลอง (พร้อมตัวอย่างคำตอบ)**
+
 ####### จะแสดงค่าทุกๆกี่วินาที
+
 ####### ANS ทุกๆ 500 ms (ครึ่งวินาที)
