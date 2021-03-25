@@ -12,9 +12,9 @@
 
 ##**ศึกษาข้อมูลเบื้องต้น (แหล่งข้อมูลเพื่อการศึกษา)**
 
-#โปรแกรมสร้างไวไฟแอคเซสพอยต์ (Wifi AP) [YouTube](https://www.youtube.com/watch?v=T26DVHePlTs)
+#โปรแกรมสร้างไวไฟแอคเซสพอยต์ (Wifi AP) [YouTube](https://youtu.be/T26DVHePlTs)
 
-#เขียนโปรแกรมเชื่อมต่อไวไฟและเว็บเซอร์เวอร์   [YouTube](https://www.youtube.com/watch?v=VX-QNQcO-b4)
+#เขียนโปรแกรมเชื่อมต่อไวไฟและเว็บเซอร์เวอร์   [YouTube](https://youtu.be/VX-QNQcO-b4)
 
 ##**วิธีการทำการทดลอง (ทำเป็นขั้นตอนพร้อมภาพประกอบ)**
 1. ต่อ USB เข้า อแดปเตอร์ และค่อยนำไมโครคอนโทรเลอร์มาเสียบต่อ [![Image](https://imgbb.com/)](https://ibb.co/qWCHFqG)
@@ -122,7 +122,7 @@ void setup(void){
 		msg += cnt;
 		server.send(200, "text/plain", msg);
 	});
-	/// http://198.0.0.1/on = Hello cnt: ???
+	/// http://198.0.0.1/on = Connected cnt: ???
 	server.on("/on", []() {
 		cnt++;
 		String msg = "Switch on ";
